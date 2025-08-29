@@ -10,7 +10,7 @@
 }
 
 body{
-   background-image: url("../images/bg-header-mobile.png");
+   background-image: url("./images/bg-header-mobile.png");
    background-repeat: no-repeat;
    background-size: 100%;
    font-size: 18px;
@@ -19,7 +19,7 @@ body{
    position: relative;
 
    @include mixins.view(768px){
-    background-image: url("../images/bg-header-desktop.png");
+    background-image: url("./images/bg-header-desktop.png");
    }
 }
 
@@ -410,5 +410,6 @@ body{
         margin-right: 0;
     }
 }
+
 
 
