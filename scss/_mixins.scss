@@ -1,0 +1,16 @@
+@mixin font-styles($size, $weight, $color){
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin flex-direction($direction){
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin view($width){
+    @media screen and (min-width:$width) {
+        @content
+    }
+}

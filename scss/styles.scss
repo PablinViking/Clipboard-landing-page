@@ -1,0 +1,413 @@
+@use 'variables';
+@use 'mixins';
+
+*{
+    font-family: variables.$Principal-font;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+   background-image: url("../images/bg-header-mobile.png");
+   background-repeat: no-repeat;
+   background-size: 100%;
+   font-size: 18px;
+   margin: 0 32px;
+   text-align: center;
+   position: relative;
+
+   @include mixins.view(768px){
+    background-image: url(../images/bg-header-desktop.png);
+   }
+}
+
+// -----------> General <----------- //
+.general{
+    // ----> Buttons <---- //
+    &__button{
+        height: 56px;
+        width: 311px; 
+        border-radius: 50px;
+        margin-bottom: 24px;
+        background-color: variables.$Green-500;
+        border-bottom: 3px solid variables.$Green-border-b;
+        @include mixins.font-styles(0.944em, 600, variables.$White);
+        box-shadow: 0 10px 20px variables.$Green-shadow;
+
+        @include mixins.view(1024px){
+            width: 227px;
+            margin-right: 16px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__button--blue{
+        background-color: variables.$Blue-100;
+        border-bottom: 3px solid variables.$Blue-border-b;
+        box-shadow: 0 10px 20px variables.$Blue-shadow;
+
+        @include mixins.view(1024px){
+            margin-right: 0;
+        }
+    }
+
+    &__button:hover{
+        cursor: pointer;
+        background-color: variables.$Green-hover;
+        border-bottom: 3px solid variables.$Green-hover;
+    }
+
+    &__button--blue:hover{
+        background-color: variables.$Blue-hover;
+        border-bottom: 3px solid variables.$Blue-hover;
+    }
+
+    // ----> H2 <---- //
+    &__h2{
+        @include mixins.font-styles(1.556em, 600, variables.$Gray-700);
+        margin-bottom: 20px;
+
+        @include mixins.view(768px){
+            @include mixins.font-styles(1.889em,none,none);
+        }
+        
+    }
+
+    // ----> p01 <---- //
+    &__p01{
+        @include mixins.font-styles(0.889em, 400, variables.$Gray-500);
+        line-height: 1.5em;
+
+        @include mixins.view(768px){
+            @include mixins.font-styles(1em,none,none);
+            width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        @include mixins.view(1024px){
+            width: 685px;
+        }
+    }
+
+    // ----> H3 <---- //
+    &__h3{
+        @include mixins.font-styles(1.333em, 600, variables.$Gray-700);
+    }
+
+    // ----> p02 <---- //
+    &__p02{
+        @extend .general__p01;
+
+        @include mixins.view(768px){
+            @include mixins.font-styles(0.889em,none,none);
+            width: 350px;
+        }
+    }
+}
+
+// -----------> Header <----------- //
+.header{
+    display: grid;
+    place-content: center;
+    height: 313px;
+    padding-top: 58px;
+}
+
+// -----------> Main <----------- //
+.main{
+    margin-bottom: 136px;
+
+    @include mixins.view(1024px){
+        margin-bottom: 145px;
+    }
+
+    &__h1{
+        @include mixins.font-styles(1.778em, 600, variables.$Gray-700);
+        margin-bottom: 20px;
+
+        @include mixins.view(768px){
+            @include mixins.font-styles(2em,none,none);
+        }
+    }
+
+    &__p{
+        @include mixins.font-styles(0.895em, 400, variables.$Gray-500);
+        margin-bottom: 50px;
+        line-height: 1.5em;
+
+        @include mixins.view(768px){
+            @include mixins.font-styles(1.111em,none,none);
+            width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        @include mixins.view(1024px){
+            width: 685px;
+        }
+    }
+}
+
+// -----------> Keep Track Section <----------- //
+.keep-track-section{
+    margin-bottom: 136px;
+
+    @include mixins.view(1024px){
+        margin-bottom: 145px;
+    }
+
+   &__p01{
+    margin-bottom: 67px;
+
+    @include mixins.view(1024px){
+        margin-bottom: 83px;
+    }
+   }
+
+   // Division //
+   &__division{
+    @include mixins.flex-direction(column);
+    @include mixins.view(1024px){
+        @include mixins.flex-direction(row);
+        align-items: center;
+        justify-content: center;
+    }
+   }
+
+   // Image Container //
+   &__image-container{
+    margin-bottom: 57px;
+
+    @include mixins.view(1024px){
+        margin: 0 40px 0 -30px;
+    }
+
+    @include mixins.view(1152px){
+        margin: 0 60px 0 -80px;
+    }
+
+    @include mixins.view(1280px){
+        margin: 0 90px 0 -180px;
+    }
+
+    @include mixins.view(1366px){
+        margin: 0 100px 0 -240px;
+    }
+
+    @include mixins.view(1366px){
+        margin: 0 110px 0 -290px;
+    }
+   }
+
+   &__image{
+    width: 311px;
+
+    @include mixins.view(768px){
+        width: 600px;
+    }
+
+    @include mixins.view(1024px){
+        width: 700px;
+    }
+
+    @include mixins.view(1152px){
+        width: 750px;
+    }
+   }
+
+   // Info Container //
+   &__info{
+    margin-bottom: 50px;
+    text-align: left;
+   }
+
+   &__h3{
+    margin-bottom: 13px;
+   }
+}
+
+// -----------> Access Section <----------- //
+.access-section {
+    margin-bottom: 90px;
+
+    @include mixins.view(1024px){
+        margin-bottom: 100px;
+    }
+
+    &__p01 {
+        @extend .keep-track-section__p01;
+
+        @include mixins.view(1024px){
+            margin-bottom: 100px;
+        }
+    }
+
+    &__image {
+        width: 347px;
+        margin-left: -17px;
+
+        @include mixins.view(768px){
+            width: 600px;
+            margin-left: 0;
+        }
+
+        @include mixins.view(1024px){
+            width: 905px;
+        }
+    }
+}
+
+// -----------> Supercharge Section <----------- //
+.supercharge-section{
+    margin-bottom: 74px;
+    &__p01{
+        margin-bottom: 92px;
+
+        @include mixins.view(1152px){
+            margin-bottom: 56px;
+        }
+    }
+
+    &__info-container{
+        @include mixins.flex-direction(column);
+
+        @include mixins.view(1152px){
+            @include mixins.flex-direction(row);
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__info{
+        margin-bottom: 58px;
+        @include mixins.view(1152px){
+            margin: 0 35px 0 0;
+        }
+    }
+
+    &__info01{
+        margin-top: 13px;
+    }
+
+    &__info03{
+        margin-right: 0;
+    }
+
+    &__image{
+        margin-bottom: 38px;
+    }
+}
+
+// -----------> Brands Section <----------- //
+.brands-section{
+    @include mixins.flex-direction(column);
+    margin-bottom: 106px;
+
+    @include mixins.view(1152px){
+        @include mixins.flex-direction(row);
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 150px;
+    }
+
+    &__logo-container{
+        margin-bottom: 67px;
+
+        @include mixins.view(1152px){
+            margin: 0 95px 0 0;
+        }
+    }
+
+    &__logo-container-last{
+        @include mixins.view(1152px){
+            margin-right: 0;
+        }
+    }
+}
+
+// -----------> Clipboard Section <----------- //
+.clipboard-section{
+    margin-bottom: 146px;
+
+    @include mixins.view(1024px){
+        margin-bottom: 150px;
+    }
+
+    &__p01{
+        margin-bottom: 48px;
+    }
+}
+
+// -----------> Footer <----------- //
+.footer{
+    background-color: variables.$Footer-bgc;
+    position: absolute;
+    left: -32px;
+    width: 100vw;
+    padding-top: 52px;
+    @include mixins.flex-direction(column);
+    align-items: center;
+
+    @include mixins.view(1024px){
+        @include mixins.flex-direction(row);
+        justify-content: space-evenly;
+    }
+
+    &__logo{
+        width: 55px;
+        margin-bottom: 44px
+    }
+
+    // Company Info //
+    &__company-info{
+        @include mixins.flex-direction(column);
+
+        @include mixins.view(1024px){
+            @include mixins.flex-direction(row);
+        }
+    }
+
+    &__company-division{
+        @include mixins.flex-direction(column);
+
+        @include mixins.view(1024px){
+            text-align: left;
+            margin-left: 99px;
+        }
+    }
+
+    &__company-link{
+        text-decoration: none;
+        color: variables.$Gray-700;
+        font-size: 0.92em;
+        margin-bottom: 30px;
+    }
+
+    &__company-link:hover{
+        cursor: pointer;
+        color: variables.$Gray-500;
+    }
+
+    // Social Nets //
+    &__social-nets-container{
+        margin: 23px 0 51px;
+        @include mixins.flex-direction(row);
+        align-items: center;
+    }
+
+    &__social-net-link{
+        margin-right: 41px;
+        display: block;
+    }
+
+
+    &__social-net-link:hover path{
+        fill: variables.$Gray-500;
+    }
+
+    .link03{
+        margin-right: 0;
+    }
+}
+
